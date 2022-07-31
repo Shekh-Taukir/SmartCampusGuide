@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Detail button clicked", Toast.LENGTH_SHORT).show();
                 try {
                     if (predictedImage==null)
                     {
@@ -82,8 +81,17 @@ public class MainActivity extends AppCompatActivity {
                         Intent i = new Intent(getApplicationContext(), SophosLabActivity.class);
                         startActivity(i);
                     }
-                    else{
-
+                    else if (predictedImage=="Sophos Rack"){
+                        Intent i = new Intent(getApplicationContext(), SophosRackActivity.class);
+                        startActivity(i);
+                    }
+                    else if (predictedImage=="Apple Lab"){
+                        Intent i = new Intent(getApplicationContext(), AppleLabActivity.class);
+                        startActivity(i);
+                    }
+                    else if (predictedImage=="Virtual Reality Lab"){
+                        Intent i = new Intent(getApplicationContext(), VirtualRealityLabActivity.class);
+                        startActivity(i);
                     }
                 }
                 catch (Exception e){
