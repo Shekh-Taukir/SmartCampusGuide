@@ -24,6 +24,11 @@
                 android:textSize="20dp"
                 android:textAlignment="center"
                 android:text="Heading" />
+            <ImageView
+                android:id="@+id/textToSpeech"
+                android:layout_width="45dp"
+                android:layout_marginEnd="5dp"
+                android:layout_height="45dp"/>
         </LinearLayout>
 
         <LinearLayout

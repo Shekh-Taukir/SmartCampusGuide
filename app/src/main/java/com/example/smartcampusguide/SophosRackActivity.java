@@ -17,7 +17,9 @@ public class SophosRackActivity extends AppCompatActivity {
         String [] HeadingData = {"Sophos Rack"};
         String [] DetailData = {"CPU: Core i5 12500H, RAM : 32 GB DDR4, Storage : 2TB SSD, Operating System : Ubuntu 20.04, Web Server : Apache2, Database : MongoDB, Programming : ASP.NET6"};
         Integer [] ImageData={R.drawable.sophos_rack_image};
-        CustomListAdapter_DetailList customAdapter=new CustomListAdapter_DetailList(getApplicationContext(),HeadingData,DetailData,ImageData);
+        Integer [] speakers={R.drawable.ic_microphone,R.drawable.ic_microphone,R.drawable.ic_microphone};
+
+        CustomListAdapter_DetailList customAdapter=new CustomListAdapter_DetailList(getApplicationContext(),HeadingData,DetailData,ImageData,speakers);
         try {
             imageDetailList.setAdapter(customAdapter);
         }
