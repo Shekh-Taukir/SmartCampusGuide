@@ -14,17 +14,19 @@ import java.util.Locale;
 public class CustomListAdapter_DetailList extends BaseAdapter {
     Context context;
     String[] headingData,detailData;
-    Integer [] imageData,speakers;
+    Integer [] imageData,speakers,speakersOff;
     LayoutInflater inflater;
     TextToSpeech textToSpeech;
+    int flag=0;
 
 
-    public CustomListAdapter_DetailList(Context context, String[] headingData, String[] detailData, Integer[] imageData,Integer [] speakers) {
+    public CustomListAdapter_DetailList(Context context, String[] headingData, String[] detailData, Integer[] imageData,Integer [] speakers,Integer [] speakersOff ) {
         this.context = context;
         this.headingData = headingData;
         this.detailData = detailData;
         this.imageData = imageData;
         this.speakers=speakers;
+        this.speakersOff=speakersOff;
         inflater=LayoutInflater.from(context);
     }
 
@@ -63,7 +65,17 @@ public class CustomListAdapter_DetailList extends BaseAdapter {
         speaker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textToSpeech.speak("Specification of "+headingData[i].toString()+" are "+detailData[0].toString(), TextToSpeech.QUEUE_FLUSH,null);
+                if (flag==1) {
+                    speaker.setImageResource(speakers[i]);
+                    flag=0;
+                    textToSpeech.stop();
+                }
+                else
+                {
+                    flag = 1;
+                    speaker.setImageResource(speakersOff[i]);
+                    textToSpeech.speak("Specification of "+headingData[i].toString()+" are "+detailData[0].toString(), TextToSpeech.QUEUE_FLUSH,null);
+                }
             }
         });
         details.setText(detailData[0]);

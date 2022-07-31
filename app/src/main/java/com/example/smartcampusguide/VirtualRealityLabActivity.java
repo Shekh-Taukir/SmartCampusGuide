@@ -14,12 +14,14 @@ public class VirtualRealityLabActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_virtual_reality_lab);
         imageDetailList=findViewById(R.id.imageDetailList);
-        String [] HeadingData = {"Virual Reality Lab"};
+        String [] HeadingData = {"Virtual Reality Lab"};
         String [] DetailData = {"CPU: Core i5 12500H, RAM : 32 GB DDR4, Storage : 2TB SSD, Operating System : Windows OS, Web Server : Apache2, Database : MongoDB, Programming : ASP.NET6"};
         Integer [] ImageData={R.drawable.virtual_reality_lab_image};
         Integer [] speakers={R.drawable.ic_microphone,R.drawable.ic_microphone,R.drawable.ic_microphone};
+        Integer [] speakersOff={R.drawable.ic_baseline_volume_off_24,R.drawable.ic_baseline_volume_off_24,R.drawable.ic_baseline_volume_off_24};
 
-        CustomListAdapter_DetailList customAdapter=new CustomListAdapter_DetailList(getApplicationContext(),HeadingData,DetailData,ImageData,speakers);
+
+        CustomListAdapter_DetailList customAdapter=new CustomListAdapter_DetailList(getApplicationContext(),HeadingData,DetailData,ImageData,speakers,speakersOff);
         try {
             imageDetailList.setAdapter(customAdapter);
         }
