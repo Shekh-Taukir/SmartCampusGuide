@@ -36,13 +36,6 @@ public class SophosLabActivity extends AppCompatActivity {
         catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-//        imageDetailList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(SophosLabActivity.this, HeadingData[i].toString(), Toast.LENGTH_SHORT).show();
-//                textToSpeech.speak("Specification of "+HeadingData[i].toString()+" are "+DetailData[0].toString(),TextToSpeech.QUEUE_FLUSH,null);
-//            }
-//        });
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
