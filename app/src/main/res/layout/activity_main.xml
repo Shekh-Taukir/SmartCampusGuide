@@ -11,68 +11,145 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
-
-        <Button
-            android:id="@+id/select"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="32dp"
-            android:height="60dp"
-            android:text="Gallary"
-            app:cornerRadius="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/getDetails" />
-
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="419dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/img"
+            android:layout_width="392dp"
+            android:layout_height="404dp"
+            android:layout_marginStart="7dp"
+
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="37dp"
+            android:src="@drawable/no_image"
+            app:layout_constraintBottom_toTopOf="@+id/item_img"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:srcCompat="@tools:sample/avatars"
-            android:scaleType="fitXY"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:id="@+id/item_img"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:fontFamily="sans-serif-black"
-            android:textSize="26sp"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="21dp"
+            android:background="@drawable/field"
+            android:clickable="true"
+            android:drawableStart="@drawable/image"
+            android:drawableEnd="@drawable/upload"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:onClick="pick"
+            android:text="Upload image"
+            android:textColor="@color/element_white"
+            android:textCursorDrawable="@null"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/item_img1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/img" />
 
-        <Button
-            android:id="@+id/camera"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginTop="32dp"
-            android:height="60dp"
-            android:text="Camera"
-            app:cornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.526"
-            app:layout_constraintStart_toEndOf="@+id/select"
-            app:layout_constraintTop_toBottomOf="@+id/getDetails" />
-
-        <Button
-            android:id="@+id/getDetails"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/item_img1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:height="60dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="57dp"
+            android:background="@drawable/field"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_baseline_camera_alt_24"
+            android:drawableEnd="@drawable/upload"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:onClick="pick"
+            android:text="Click image"
+            android:textColor="@color/element_white"
+            android:textCursorDrawable="@null"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/create_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_img" />
+
+        <Button
+            android:id="@+id/create_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/round_button"
+            android:elevation="10dp"
+            android:gravity="center"
             android:text="Get Details"
-            app:cornerRadius="15dp"
+            android:textColor="@color/element_white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/item_img1" />
+<!--        <Button-->
+<!--            android:id="@+id/select"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginStart="64dp"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:height="60dp"-->
+<!--            android:text="Gallary"-->
+<!--            app:cornerRadius="15dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/getDetails" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="419dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.0"-->
+<!--            tools:srcCompat="@tools:sample/avatars"-->
+<!--            android:scaleType="fitXY"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="28dp"-->
+<!--            android:fontFamily="sans-serif-black"-->
+<!--            android:textSize="26sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.498"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/camera"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:height="60dp"-->
+<!--            android:text="Camera"-->
+<!--            app:cornerRadius="15dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.526"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/select"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/getDetails" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/getDetails"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:height="60dp"-->
+<!--            android:text="Get Details"-->
+<!--            app:cornerRadius="15dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

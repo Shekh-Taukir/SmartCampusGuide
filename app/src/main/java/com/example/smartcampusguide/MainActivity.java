@@ -1,6 +1,8 @@
 package com.example.smartcampusguide;
 
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -99,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void pick(View view) {
+        verifyStoragePermissions(MainActivity.this);
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(Intent.createChooser(intent, "Open Gallery"), PICK_IMAGE_REQUEST);
     }
     private void predict(){
         if (img == null) {
@@ -231,4 +239,5 @@ public class MainActivity extends AppCompatActivity {
             outState.putParcelable("image", img);
         }
     }
+
 }

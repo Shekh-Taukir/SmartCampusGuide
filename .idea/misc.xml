@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/drawable/field.xml" value="0.14" />
+        <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.14" />
+        <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/drawable/image.xml" value="0.14" />
+        <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/drawable/round_button.xml" value="0.14" />
         <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/layout-land/activity_image_detail.xml" value="0.1900352733686067" />
         <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/layout-land/activity_main.xml" value="0.1900352733686067" />
         <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/layout/activity_image_detail.xml" value="0.21603260869565216" />

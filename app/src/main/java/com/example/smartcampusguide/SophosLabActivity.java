@@ -29,6 +29,7 @@ public class SophosLabActivity extends AppCompatActivity {
         Integer [] speakers={R.drawable.ic_microphone,R.drawable.ic_microphone,R.drawable.ic_microphone};
         Integer [] speakersOff={R.drawable.ic_baseline_volume_off_24,R.drawable.ic_baseline_volume_off_24,R.drawable.ic_baseline_volume_off_24};
         Integer [] ImageData={R.drawable.sophos_rack_image,R.drawable.sophos_pc_image,R.drawable.sophos_led_image};
+        int [] textToSpeechArray={0,0,0};
         CustomListAdapter_DetailList customAdapter=new CustomListAdapter_DetailList(getApplicationContext(),HeadingData,DetailData,ImageData,speakers,speakersOff);
         try {
             imageDetailList.setAdapter(customAdapter);
@@ -36,6 +37,13 @@ public class SophosLabActivity extends AppCompatActivity {
         catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+        imageDetailList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                SharedClass sc=new SharedClass();
+                Toast.makeText(SophosLabActivity.this, "the result is "+String.valueOf(sc.sharedArray[i]), Toast.LENGTH_SHORT).show();
+            }
+        });
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
@@ -44,5 +52,10 @@ public class SophosLabActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+}
+class LabActivityClass{
+    public void testFunction(int i){
+        Toast.makeText(new SophosLabActivity().getApplicationContext(), "Hello constructor", Toast.LENGTH_SHORT).show();
     }
 }
