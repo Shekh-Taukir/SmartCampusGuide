@@ -10,6 +10,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -35,22 +36,28 @@ import java.nio.ByteBuffer;
 public class MainActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE = 101;
+    private static final int PICK_IMAGE_REQUEST = 9544;
     public static final int CAMERA_PERM_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
     private ImageView imageView;
-    private Button select,camera,detail;
-    private TextView tv;
+//    private Button select,camera,detail;
+    private TextView tv,select,camera,detail;
     private Bitmap img;
     String predictedImage=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageView=(ImageView) findViewById(R.id.imageView);
-        tv=(TextView) findViewById(R.id.textView);
-        select=(Button) findViewById(R.id.select);
-        camera=(Button) findViewById(R.id.camera);
-        detail=(Button) findViewById(R.id.getDetails);
+        imageView=(ImageView) findViewById(R.id.img);
+//        tv=(TextView) findViewById(R.id.textView);
+        select=(TextView) findViewById(R.id.item_img);
+        camera=(TextView) findViewById(R.id.item_img1);
+        detail=(Button) findViewById(R.id.create_item);
         if (savedInstanceState != null) {
             img = (Bitmap) savedInstanceState.getParcelable("image");
             imageView.setImageBitmap(img);
@@ -107,6 +114,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         startActivityForResult(Intent.createChooser(intent, "Open Gallery"), PICK_IMAGE_REQUEST);
+    }
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
     }
     private void predict(){
         if (img == null) {
