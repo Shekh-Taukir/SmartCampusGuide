@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -103,6 +104,16 @@ public class MainActivity extends AppCompatActivity {
     private void predict(){
         if (img == null) {
             tv.setText("Please select image");
+            int orientation = getResources().getConfiguration().orientation;
+            if(orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                // In landscape
+                int landscape = getResources().getIdentifier("img11", "drawable", this.getPackageName());
+                imageView.setImageResource(landscape);
+            } else {
+                // In portrait
+                int portrait = getResources().getIdentifier("no_image", "drawable", this.getPackageName());
+                imageView.setImageResource(portrait);
+            }
         } else {
             img = Bitmap.createScaledBitmap(img, 224, 224, true);
             try {
