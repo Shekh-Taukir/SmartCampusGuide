@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -72,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Detail button clicked", Toast.LENGTH_SHORT).show();
                 try {
                     if (predictedImage==null)
                     {
@@ -82,8 +82,17 @@ public class MainActivity extends AppCompatActivity {
                         Intent i = new Intent(getApplicationContext(), SophosLabActivity.class);
                         startActivity(i);
                     }
-                    else{
-
+                    else if (predictedImage=="Sophos Rack"){
+                        Intent i = new Intent(getApplicationContext(), SophosRackActivity.class);
+                        startActivity(i);
+                    }
+                    else if (predictedImage=="Apple Lab"){
+                        Intent i = new Intent(getApplicationContext(), AppleLabActivity.class);
+                        startActivity(i);
+                    }
+                    else if (predictedImage=="Virtual Reality Lab"){
+                        Intent i = new Intent(getApplicationContext(), VirtualRealityLabActivity.class);
+                        startActivity(i);
                     }
                 }
                 catch (Exception e){
@@ -95,6 +104,16 @@ public class MainActivity extends AppCompatActivity {
     private void predict(){
         if (img == null) {
             tv.setText("Please select image");
+            int orientation = getResources().getConfiguration().orientation;
+            if(orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                // In landscape
+                int landscape = getResources().getIdentifier("img11", "drawable", this.getPackageName());
+                imageView.setImageResource(landscape);
+            } else {
+                // In portrait
+                int portrait = getResources().getIdentifier("no_image", "drawable", this.getPackageName());
+                imageView.setImageResource(portrait);
+            }
         } else {
             img = Bitmap.createScaledBitmap(img, 224, 224, true);
             try {
