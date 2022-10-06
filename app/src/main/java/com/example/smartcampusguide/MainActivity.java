@@ -1,12 +1,6 @@
 package com.example.smartcampusguide;
 
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,6 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.smartcampusguide.ml.ModelEfficientnetb0;
 
@@ -78,22 +77,23 @@ public class MainActivity extends AppCompatActivity {
                     {
                         Toast.makeText(MainActivity.this, "No Output Found", Toast.LENGTH_SHORT).show();
                     }
-                    else if (predictedImage=="Sophos Lab"){
+                    else{/*if (predictedImage=="Sophos Lab"){*/
                         Intent i = new Intent(getApplicationContext(), SophosLabActivity.class);
+                        i.putExtra("activityResult",predictedImage);
                         startActivity(i);
                     }
-                    else if (predictedImage=="Sophos Rack"){
-                        Intent i = new Intent(getApplicationContext(), SophosRackActivity.class);
-                        startActivity(i);
-                    }
-                    else if (predictedImage=="Apple Lab"){
-                        Intent i = new Intent(getApplicationContext(), AppleLabActivity.class);
-                        startActivity(i);
-                    }
-                    else if (predictedImage=="Virtual Reality Lab"){
-                        Intent i = new Intent(getApplicationContext(), VirtualRealityLabActivity.class);
-                        startActivity(i);
-                    }
+//                    else if (predictedImage=="Sophos Rack"){
+//                        Intent i = new Intent(getApplicationContext(), SophosRackActivity.class);
+//                        startActivity(i);
+//                    }
+//                    else if (predictedImage=="Apple Lab"){
+//                        Intent i = new Intent(getApplicationContext(), AppleLabActivity.class);
+//                        startActivity(i);
+//                    }
+//                    else if (predictedImage=="Virtual Reality Lab"){
+//                        Intent i = new Intent(getApplicationContext(), VirtualRealityLabActivity.class);
+//                        startActivity(i);
+//                    }
                 }
                 catch (Exception e){
                     Toast.makeText(MainActivity.this, "Try method called", Toast.LENGTH_SHORT).show();
