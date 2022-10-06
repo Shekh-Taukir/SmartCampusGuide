@@ -1,5 +1,6 @@
 package com.example.smartcampusguide;
 
+<<<<<<< HEAD
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,16 @@ import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+=======
+import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+>>>>>>> 6123108f13703f671501056d842ca4e51fec63ba
 import java.util.Locale;
 
 public class SophosLabActivity extends AppCompatActivity {

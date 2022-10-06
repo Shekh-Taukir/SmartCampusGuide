@@ -8,6 +8,7 @@
         <entry key="..\:/CSE Folder/7CSE-2/SGP/New Checkout Folder/SmartCampusGuide/app/src/main/res/drawable/image.xml" value="0.1235" />
         <entry key="..\:/CSE Folder/7CSE-2/SGP/New Checkout Folder/SmartCampusGuide/app/src/main/res/layout-land/activity_main.xml" value="0.1" />
         <entry key="..\:/CSE Folder/7CSE-2/SGP/New Checkout Folder/SmartCampusGuide/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+<<<<<<< HEAD
         <entry key="..\:/CSE Folder/7CSE-2/SGP/New Checkout Folder/SmartCampusGuide/app/src/main/res/layout/activity_sophos_lab.xml" value="0.1838768115942029" />
         <entry key="..\:/CSE Folder/7CSE-2/SGP/Test Folder For App/SmartCampusGuide/app/src/main/res/drawable-v24/ic_baseline_camera_alt_24.xml" value="0.1425" />
         <entry key="..\:/CSE Folder/7CSE-2/SGP/Test Folder For App/SmartCampusGuide/app/src/main/res/drawable/ic_baseline_volume_off_24.xml" value="0.1425" />
@@ -15,6 +16,8 @@
         <entry key="..\:/CSE Folder/7CSE-2/SGP/Test Folder For App/SmartCampusGuide/app/src/main/res/drawable/image.xml" value="0.1425" />
         <entry key="..\:/CSE Folder/7CSE-2/SGP/Test Folder For App/SmartCampusGuide/app/src/main/res/drawable/image_border.xml" value="0.1425" />
         <entry key="..\:/CSE Folder/7CSE-2/SGP/Test Folder For App/SmartCampusGuide/app/src/main/res/layout/activity_sophos_lab.xml" value="0.1838768115942029" />
+=======
+>>>>>>> 6123108f13703f671501056d842ca4e51fec63ba
         <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/layout-land/activity_image_detail.xml" value="0.1900352733686067" />
         <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/layout-land/activity_main.xml" value="0.1900352733686067" />
         <entry key="..\:/Users/tauki/AndroidStudioProjects/SmartCampusGuide/SmartCampusGuide/app/src/main/res/layout/activity_image_detail.xml" value="0.21603260869565216" />
